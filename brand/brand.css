@@ -204,11 +204,16 @@ img[data-sclf-logo] {
   border-radius: 999px;
 }
 
-.hero-engraving {
+.hero-art {
   display: block;
   align-self: end;
   justify-self: end;
   width: min(100%, 540px);
+}
+
+.hero-engraving {
+  display: block;
+  width: 100%;
   height: auto;
 }
 
@@ -322,7 +327,7 @@ details[open] > summary .disclosure-sign::before { content: "−"; }
   .home-header { grid-template-columns: 1fr 1fr; }
   .home-header nav { grid-row: 2; grid-column: 1 / -1; }
   .home-hero-layout { grid-template-columns: minmax(0, 1fr); }
-  .hero-engraving { justify-self: center; width: min(80%, 340px); }
+  .hero-art { display: none; }
   .home-hero-values { flex-flow: row wrap; }
 }
 
@@ -656,7 +661,6 @@ header[data-sar-type="navigation"] {
   .home-hero-copy button { margin-top: 16px; }
   .home-hero-values { gap: 6px; }
   .home-hero-values li { padding: 4px 10px; }
-  .hero-engraving { width: min(65%, 285px); }
 
   main > section[data-sar-section^="home/"]:not(#hero) {
     padding-inline: 20px;
@@ -666,4 +670,9 @@ header[data-sar-type="navigation"] {
     padding: 16px;
     text-align: left;
   }
+}
+
+@media (max-height: 500px) and (pointer: coarse) and (orientation: landscape) {
+  .home-hero-layout { grid-template-columns: minmax(0, 1fr); }
+  .hero-art { display: none; }
 }
