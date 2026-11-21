@@ -651,7 +651,6 @@ header[data-sar-type="navigation"] {
     justify-self: center;
   }
 
-  .home-hero-layout { min-height: 0; }
   .home-hero-copy {
     gap: 14px;
     padding: 26px 20px;
@@ -675,4 +674,23 @@ header[data-sar-type="navigation"] {
 @media (max-height: 500px) and (pointer: coarse) and (orientation: landscape) {
   .home-hero-layout { grid-template-columns: minmax(0, 1fr); }
   .hero-art { display: none; }
+}
+
+@media (max-width: 767px), (max-height: 500px) and (pointer: coarse) and (orientation: landscape) {
+  #hero {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    min-height: 100dvh;
+  }
+
+  .home-hero-layout {
+    flex: 1 0 auto;
+    min-height: 0;
+    padding-bottom: env(safe-area-inset-bottom);
+  }
+
+  .home-hero-copy {
+    background: transparent;
+  }
 }
