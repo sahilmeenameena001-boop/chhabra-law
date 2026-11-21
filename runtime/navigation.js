@@ -13,9 +13,10 @@ toggle.addEventListener('click', () => {
 });
 
 navigation.addEventListener('click', (event) => {
-  if (event.target.closest('a') && getComputedStyle(toggle).display !== 'none') {
+  const item = event.target.closest('a, button');
+  if (item && getComputedStyle(toggle).display !== 'none') {
     setMenuOpen(false);
-    toggle.focus();
+    if (!item.hasAttribute('data-open-appointment')) toggle.focus();
   }
 });
 
