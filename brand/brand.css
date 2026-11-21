@@ -65,14 +65,9 @@ img[data-sclf-logo] {
   to { opacity: 1; transform: translateY(0); }
 }
 
-#about-us [data-sclf-d="e1yey8uv-3"] {
-  width: min(100%, 500px);
-}
 
-#about-us [data-sclf-d="e1yey8uv-4"] {
-  width: 100%;
-  height: auto;
-}
+
+
 
 .about-library-photo {
   display: block;
@@ -88,12 +83,7 @@ img[data-sclf-logo] {
   background: #f8f3ee;
 }
 
-@media (max-width: 900px) {
-  #about-us [data-sclf-d="e1yey8uv-2"] {
-    flex-direction: column;
-    align-items: center;
-  }
-}
+
 
 
 
@@ -542,4 +532,138 @@ header[data-sar-type="navigation"] {
 
 @media (max-height: 500px) and (orientation: landscape) {
   header[data-sar-type="navigation"] { position: static; }
+}
+
+/* Frame the complete logo and blend the source burgundy into the header. */
+.header-logo {
+  position: relative;
+  display: block;
+  width: 160px;
+  height: 104px;
+  overflow: hidden;
+  mix-blend-mode: lighten;
+}
+
+.header-logo img {
+  position: absolute;
+  display: block;
+  width: 240px;
+  max-width: none;
+  height: auto;
+  inset: -58px auto auto -40px;
+}
+
+@media (max-width: 767px) {
+  .header-logo {
+    width: 128px;
+    height: 83px;
+  }
+
+  .header-logo img {
+    width: 192px;
+    inset: -46px auto auto -32px;
+  }
+}
+
+.appointment-submit {
+  opacity: 1;
+  cursor: pointer;
+}
+
+.appointment-status a {
+  text-decoration: underline;
+}
+
+.home-about {
+  width: 100%;
+  padding: clamp(44px, 7vw, 100px) max(20px, calc((100% - 1180px) / 2));
+  background: #343e32;
+  color: #f8f3ee;
+}
+
+.about-layout {
+  display: grid;
+  grid-template-columns: minmax(0, 4fr) minmax(0, 5fr);
+  gap: clamp(28px, 5vw, 72px);
+  align-items: center;
+}
+
+.about-copy {
+  display: grid;
+  gap: 28px;
+  min-width: 0;
+}
+
+.about-photo-frame {
+  position: relative;
+  width: 100%;
+  max-width: 495px;
+  margin: 0;
+  overflow: hidden;
+  border-radius: 12px;
+  box-shadow: 0 14px 36px #161c1655;
+}
+
+.about-photo-frame::after {
+  content: "";
+  position: absolute;
+  inset: 8px;
+  border: 1px solid #f1e8dc80;
+  border-radius: 6px;
+  pointer-events: none;
+}
+
+.about-library-photo {
+  filter: brightness(1.05) contrast(1.07) saturate(1.04);
+}
+
+.home-about .about-title { color: #fff7eb; }
+.home-about :is(.about-label, .about-emphasis) { color: #edc99a; }
+.home-about .about-body {
+  color: #f3e9db;
+  font-weight: 400;
+}
+.home-about [data-sclf-d="e1yey8uv-17"] {
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 145px), 1fr));
+  gap: 6px;
+}
+
+@media (max-width: 900px) {
+  .about-layout { grid-template-columns: minmax(0, 1fr); }
+  .about-copy { grid-row: 1; }
+  .about-photo-frame { justify-self: center; }
+}
+
+@media (max-width: 767px) {
+  .home-header {
+    gap: 4px 12px;
+    padding-inline: 16px;
+  }
+
+  .home-header nav {
+    justify-content: space-between;
+    width: min(100%, 380px);
+    justify-self: center;
+  }
+
+  .home-hero-layout { min-height: 0; }
+  .home-hero-copy {
+    gap: 14px;
+    padding: 26px 20px;
+  }
+
+  .home-hero-copy h1 { max-width: 100%; }
+  .home-hero-copy button { margin-top: 16px; }
+  .home-hero-values { gap: 6px; }
+  .home-hero-values li { padding: 4px 10px; }
+  .hero-engraving { width: min(65%, 285px); }
+
+  main > section[data-sar-section^="home/"]:not(#hero) {
+    padding-inline: 20px;
+  }
+
+  .home-about [data-sclf-d="e1yey8uv-18"] {
+    padding: 16px;
+    text-align: left;
+  }
 }
