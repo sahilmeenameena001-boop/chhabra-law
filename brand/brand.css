@@ -121,7 +121,7 @@ img[data-sclf-logo] {
 
 .home-header {
   display: grid;
-  grid-template-columns: 1fr auto 1fr;
+  grid-template-columns: minmax(0, 1fr) auto auto;
   align-items: center;
   gap: 16px;
   padding: 12px clamp(16px, 5vw, 80px);
@@ -646,9 +646,10 @@ header[data-sar-type="navigation"] {
   }
 
   .home-header nav {
-    justify-content: space-between;
-    width: min(100%, 380px);
-    justify-self: center;
+    justify-content: flex-end;
+    width: fit-content;
+    max-width: 100%;
+    justify-self: end;
   }
 
   .home-hero-copy {
@@ -693,4 +694,14 @@ header[data-sar-type="navigation"] {
   .home-hero-copy {
     background: transparent;
   }
+}
+
+.home-header nav a,
+.home-header .appointment-trigger {
+  font-size: 1rem;
+  line-height: 1.25;
+}
+
+.home-header .appointment-trigger {
+  padding: 4px 10px;
 }
