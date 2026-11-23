@@ -96,11 +96,6 @@ img[data-sclf-logo] {
   height: auto;
 }
 
-[data-sclf-d="efq0qmr-8"] {
-  top: auto;
-  bottom: 16px;
-}
-
 .excellence-photo {
   display: block;
   width: 100%;
@@ -526,13 +521,6 @@ header[data-sar-type="navigation"] {
     grid-area: 2 / 1 / 3 / -1;
     gap: 0 16px;
   }
-
-  [data-sclf-d="efq0qmr-8"],
-  [data-sclf-d="efq0qmr-10"] {
-    translate: none !important;
-  }
-
-  [data-sclf-d="efq0qmr-10"] { width: auto !important; }
 
   main :is(p, li, dd, h1, h2, h3, h4, a) {
     overflow-wrap: anywhere;
@@ -960,7 +948,6 @@ main p :is(b, strong) { font-weight: 600; }
   container-type: inline-size;
 }
 
-#services [data-sclf-d="e13vwoh2-6"] { flex: 0 1 368px; }
 
 #services [data-sclf-d="e13vwoh2-5"] {
   font-size: clamp(1.5rem, 9cqi, 3.25rem);
@@ -976,8 +963,7 @@ main p :is(b, strong) { font-weight: 600; }
     font-size: clamp(1.75rem, 7vw, 2rem);
   }
 
-  #services [data-sclf-d="e13vwoh2-6"] { flex-basis: auto; }
-  #services [data-sclf-d="e13vwoh2-5"] {
+    #services [data-sclf-d="e13vwoh2-5"] {
     font-size: clamp(1.25rem, 6.75vw, 2rem);
     font-size: clamp(1.25rem, 8.25cqi, 2rem);
   }
@@ -1041,3 +1027,5 @@ main p :is(b, strong) { font-weight: 600; }
 
   main form label { text-align: center; }
 }
+
+.overview-label { color: #802e37; font-size: .875rem; letter-spacing: .09em; text-transform: uppercase; }
