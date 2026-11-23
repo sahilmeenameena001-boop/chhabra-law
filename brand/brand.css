@@ -163,6 +163,10 @@ img[data-sclf-logo] {
   grid-template-columns: minmax(0, 68fr) minmax(0, 32fr);
   align-items: center;
   min-height: clamp(380px, 57vw, 740px);
+  background-image: url("../assets/site/images/hero-watermark.__q189041d8.svg");
+  background-repeat: no-repeat;
+  background-position: left center;
+  background-size: min(68%, 820px) auto;
 }
 
 .home-hero-copy {
@@ -171,7 +175,6 @@ img[data-sclf-logo] {
   align-items: center;
   gap: clamp(20px, 4vw, 64px);
   padding: clamp(28px, 5vw, 72px);
-  background: #b44d4c;
 }
 
 .home-hero-copy > div {
@@ -708,8 +711,9 @@ header[data-sar-type="navigation"] {
     padding-bottom: env(safe-area-inset-bottom);
   }
 
-  .home-hero-copy {
-    background: transparent;
+  .home-hero-layout {
+    background-position: center;
+    background-size: min(110%, 640px) auto;
   }
 }
 
