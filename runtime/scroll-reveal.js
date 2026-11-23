@@ -16,7 +16,7 @@ if ('IntersectionObserver' in window && typeof Element.prototype.animate === 'fu
 
   if (!reducedMotion.matches) {
     const targets = document.querySelectorAll(
-      'main h1, main h2, main article, main .team-portrait, main .team-layout > p, ' +
+      'main h1, main h2, main article, main .team-portrait img, main .team-biography, ' +
       'main [data-editorial-reveal], main details, main .practice-benefits > div, main form'
     );
     targets.forEach((target) => {

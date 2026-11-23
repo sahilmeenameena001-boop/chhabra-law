@@ -903,7 +903,7 @@ main p :is(b, strong) { font-weight: 600; }
 
 .team-layout {
   display: grid;
-  grid-template-columns: minmax(0, 232px) minmax(0, 1fr);
+  grid-template-columns: minmax(0, clamp(232px, 24vw, 280px)) minmax(0, 1fr);
   align-items: stretch;
   gap: clamp(20px, 4vw, 48px);
 }
@@ -916,8 +916,8 @@ main p :is(b, strong) { font-weight: 600; }
 .team-portrait img {
   width: 100%;
   height: auto;
-  flex: 1 0 auto;
-  object-fit: cover;
+  aspect-ratio: 1;
+  object-fit: contain;
 }
 
 .team-portrait figcaption {
@@ -926,8 +926,14 @@ main p :is(b, strong) { font-weight: 600; }
   font-weight: 600;
 }
 
-.team-layout > p {
-  max-width: 65ch;
+.team-biography {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: 10px;
+}
+
+.team-biography p {
   margin: 0;
   font-size: 1rem;
   line-height: 1.7;
@@ -1055,12 +1061,16 @@ header[data-sar-type="navigation"] :is(.sclf-navigation-link, .desktop-nav-appoi
     padding: 7px 12px;
   }
 
-  .team-layout > p {
-    max-width: none;
-  }
 }
 
 @media (min-width: 768px) {
-  .team-portrait { contain: size; }
-  .team-portrait img { flex: 1 1 0; min-height: 0; }
+  .team-layout {
+    grid-template-rows: auto auto;
+    row-gap: 0;
+  }
+
+  .team-portrait { display: contents; }
+  .team-portrait img { grid-area: 1 / 1; }
+  .team-portrait figcaption { grid-area: 2 / 1; }
+  .team-biography { grid-area: 1 / 2; }
 }
