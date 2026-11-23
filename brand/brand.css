@@ -808,13 +808,24 @@ header[data-sar-type="navigation"] {
 }
 
 .footer-office-links > div { margin-top: 0; }
-.footer-top-row {
-  display: flex;
-  justify-content: flex-end;
-  padding: 12px max(20px, env(safe-area-inset-right)) 16px;
+.callback-button {
+  display: block;
+  width: 100%;
+  min-height: 44px;
+  margin-top: 8px;
+  padding: 8px 12px;
+  background: #6b2731;
+  color: #fff7eb;
+  font-weight: 600;
+  text-transform: uppercase;
+  cursor: pointer;
 }
 
 .back-to-top {
+  position: fixed;
+  z-index: 40;
+  inset-inline-end: max(16px, env(safe-area-inset-right));
+  bottom: max(16px, calc(env(safe-area-inset-bottom) + 8px));
   display: grid;
   place-items: center;
   width: 44px;
