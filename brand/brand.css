@@ -404,13 +404,30 @@ details[open] > summary .disclosure-sign::before { content: "−"; }
 .practice-benefits { gap: 1px; margin-top: clamp(24px, 4vw, 52px); }
 .practice-benefits > div { background: #343e32; color: #f8f3ee; padding: 20px; }
 .practice-benefits h3 { color: #d7ae8a; }
-#faq { padding-top: 20px; }
+#faq {
+  padding-top: 20px;
+  padding-bottom: clamp(32px, 5vw, 64px);
+}
+
+#faq .home-information-heading {
+  margin-bottom: clamp(20px, 3vw, 32px);
+}
 
 .faq-grid {
   display: grid;
   grid-template-columns: repeat(2, minmax(0, 1fr));
-  align-items: start;
   gap: 2px;
+}
+
+.faq-grid > :last-child:nth-child(odd) { grid-column: 1 / -1; }
+
+#contact [data-email-request] button[type="submit"] {
+  background: #6b2731;
+  color: #fff7eb;
+  font-weight: 600;
+  min-height: 48px;
+  height: auto;
+  padding: 10px 16px;
 }
 
 @media (max-width: 767px) {
