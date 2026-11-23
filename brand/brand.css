@@ -758,31 +758,29 @@ header[data-sar-type="navigation"] {
     display: grid !important;
     grid-area: auto;
     width: max-content;
-    min-width: 146px;
     max-width: calc(100% - 32px);
-    max-height: min(210px, 55dvh);
+    max-height: min(225px, 55dvh);
     overflow-y: auto;
-    gap: 0;
-    padding: 4px;
-    border: 1px solid #fff7eb38;
-    border-radius: 14px;
-    background: #54232ddc;
-    -webkit-backdrop-filter: blur(16px) saturate(140%);
-    backdrop-filter: blur(16px) saturate(140%);
-    box-shadow: 0 6px 18px #29181740;
+    justify-items: end;
+    gap: 6px;
+    padding: 0;
+    background: transparent;
   }
 
   .has-mobile-nav.mobile-nav-open #site-navigation > :is(a, button) {
-    justify-content: flex-start;
-    padding-inline: 10px;
-    font-size: .9375rem;
-  }
-
-  .has-mobile-nav.mobile-nav-open #site-navigation .mobile-nav-appointment {
     display: inline-flex;
     align-items: center;
+    justify-content: center;
     min-height: 44px;
-    margin-top: 2px;
+    margin: 0;
+    padding: 6px 14px;
+    border: 1px solid #fff7eb55;
+    border-radius: 999px;
+    background: #54232d80;
+    color: #fff7eb !important;
+    font-size: .9375rem;
+    -webkit-backdrop-filter: blur(14px) saturate(140%);
+    backdrop-filter: blur(14px) saturate(140%);
   }
 }
 
@@ -986,4 +984,45 @@ main p :is(b, strong) { font-weight: 600; }
 
   #contact [data-email-request] { min-width: 0; }
   #contact .contact-links a { overflow-wrap: anywhere; }
+}
+
+@media (max-width: 767px), (max-height: 500px) and (pointer: coarse) and (orientation: landscape) {
+  main,
+  footer,
+  [data-sclf-disclaimer] {
+    text-align: center;
+  }
+
+  main :is(h1, h2, h3, h4, p, figcaption, li, summary),
+  footer :is(p, li) {
+    text-align: center;
+  }
+
+  .home-hero-copy { align-items: center; }
+  .home-hero-copy h1 { margin-inline: auto; }
+  .hero-appointment { align-self: center; }
+  .home-hero-values { justify-content: center; }
+
+  .team-layout { justify-items: center; }
+  .team-portrait { justify-self: center; }
+
+  main :is(.expertise-card ul, .practice-answer ul) {
+    padding-inline-start: 0;
+    list-style-position: inside;
+  }
+
+  main .practice-summary,
+  main .faq-disclosure > summary {
+    display: grid;
+    grid-template-columns: 32px minmax(0, 1fr) 32px;
+  }
+
+  main :is(.practice-summary, .faq-disclosure > summary)::before { content: ""; }
+  .practice-summary .practice-label { justify-content: center; }
+  .practice-summary .practice-label > span { text-align: center; }
+
+  .contact-links > div,
+  .footer-office-links > div { justify-content: center; }
+
+  main form label { text-align: center; }
 }
