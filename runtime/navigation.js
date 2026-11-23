@@ -27,5 +27,9 @@ header.addEventListener('keydown', (event) => {
   }
 });
 
+document.addEventListener('click', (event) => {
+  if (!header.contains(event.target)) setMenuOpen(false);
+});
+
 header.classList.add('has-mobile-nav');
 toggle.hidden = false;
