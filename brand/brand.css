@@ -162,8 +162,8 @@ img[data-sclf-logo] {
   min-height: clamp(380px, 57vw, 740px);
   background-image: url("../assets/chhabra/ac-hero-watermark.png");
   background-repeat: no-repeat;
-  background-position: left center;
-  background-size: min(68%, 820px) auto;
+  background-position: var(--hero-watermark-position, left center);
+  background-size: var(--hero-watermark-size, min(68%, 820px) auto);
 }
 
 .home-hero-copy {
