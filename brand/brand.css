@@ -1155,3 +1155,18 @@ header[data-sar-type="navigation"] {
     width: 132px;
   }
 }
+
+/* Justify reading text consistently in articles, sections, and disclosures. */
+main p,
+main :is(article, .practice-answer, .expertise-card) li,
+footer p,
+[data-sclf-disclaimer] {
+  text-align: justify;
+}
+
+@media (max-width: 767px), (max-height: 500px) and (pointer: coarse) and (orientation: landscape) {
+  main p,
+  footer p {
+    text-align-last: center;
+  }
+}
