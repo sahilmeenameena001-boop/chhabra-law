@@ -160,7 +160,7 @@ img[data-sclf-logo] {
   grid-template-columns: minmax(0, 68fr) minmax(0, 32fr);
   align-items: center;
   min-height: clamp(380px, 57vw, 740px);
-  background-image: url("../assets/site/images/hero-watermark.__q189041d8.svg");
+  background-image: url("../assets/chhabra/ac-hero-background.png");
   background-repeat: no-repeat;
   background-position: left center;
   background-size: min(68%, 820px) auto;
