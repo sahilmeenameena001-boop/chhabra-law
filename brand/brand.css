@@ -177,8 +177,8 @@ img[data-sclf-logo] {
   position: relative;
   isolation: isolate;
   background-repeat: no-repeat;
-  background-position: var(--hero-watermark-position, left center);
-  background-size: var(--hero-watermark-size, min(68%, 820px) auto);
+  background-position: clamp(-180px, -9vw, -75px) center;
+  background-size: auto 100%;
 }
 
 .home-hero-layout::before {
@@ -1138,4 +1138,20 @@ header[data-sar-type="navigation"] :is(.sclf-navigation-link, .desktop-nav-appoi
 footer,
 header[data-sar-type="navigation"] {
   --sar-color-primary: #d4b49d;
+}
+
+@media (min-width: 1024px) {
+  .home-hero-copy {
+    grid-template-columns: minmax(0, 1fr) 132px;
+  }
+
+  .hero-appointment { grid-column: 1; }
+
+  .home-hero-values {
+    position: absolute;
+    left: 57.75%;
+    top: 48%;
+    transform: translate(-50%, -50%);
+    width: 132px;
+  }
 }
