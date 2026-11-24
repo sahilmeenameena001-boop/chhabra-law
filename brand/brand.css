@@ -1082,3 +1082,21 @@ header[data-sar-type="navigation"] :is(.sclf-navigation-link, .desktop-nav-appoi
   .team-portrait figcaption { grid-area: 2 / 1; }
   .team-biography { grid-area: 1 / 2; }
 }
+
+@media (prefers-reduced-motion: no-preference) {
+  .home-hero-copy > div > :is(p, h1),
+  .home-hero-values,
+  .hero-appointment {
+    animation: hero-copy-entrance 560ms cubic-bezier(.2, .7, .3, 1) backwards;
+  }
+
+  .home-hero-copy h1 { animation-delay: 70ms; }
+  .home-hero-copy > div > p:last-child { animation-delay: 140ms; }
+  .home-hero-values { animation-delay: 200ms; }
+  .hero-appointment { animation-delay: 260ms; }
+}
+
+@keyframes hero-copy-entrance {
+  from { opacity: .55; translate: 0 12px; }
+  to { opacity: 1; translate: 0 0; }
+}
