@@ -1055,13 +1055,17 @@ header[data-sar-type="navigation"] :is(.sclf-navigation-link, .desktop-nav-appoi
 }
 
 @media (min-width: 768px) and (hover: hover) {
-  .home-header nav { gap: 20px; }
+  .home-header {
+    --desktop-nav-gap: 20px;
+    column-gap: var(--desktop-nav-gap);
+  }
+
+  .home-header nav { gap: var(--desktop-nav-gap); }
   .home-header nav a { font-size: .875rem; }
 
   .home-header .desktop-nav-appointment {
     min-width: 100px;
     min-height: 44px;
-    margin-inline-start: 34px;
     padding: 8px 12px;
     font-size: .8125rem;
   }
